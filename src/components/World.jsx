@@ -1,8 +1,16 @@
-// TODO: replace each text line with your own worldbuilding.
 const entries = [
-  { title: 'The Exalted', text: '[One line about the Exalted and their order]' },
-  { title: 'The War', text: '[One line about the war that broke Matthias]' },
-  { title: 'The War Machines', text: '[One line about the divine war machines]' },
+  {
+    title: 'The Exalted',
+    text: 'An order of twelve knights, conscripted with divine purpose and gifted with divine abilities. Their charge: uphold the Oath, whatever the cost. Humanity must not fall under their watch.',
+  },
+  {
+    title: 'The Eternus War',
+    text: 'Waged by an unseen enemy of many names, known as the Fallen. He commands the Damned Legion, an army of lost and corrupted souls that fights a war of attrition against humanity from the Hells, a separate plane of existence.',
+  },
+  {
+    title: 'The Oath',
+    text: 'A divine purpose held by all of humanity, and above all by the Exalted: protect humankind, even at the expense of oneself.',
+  },
 ]
 
 export default function World() {

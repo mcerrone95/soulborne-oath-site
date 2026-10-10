@@ -32,6 +32,13 @@ jobs:
         with:
           path: dist
 
+  # Builds the Docker image to prove the Dockerfile works. It is not published anywhere.
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t soulborne-oath-site .
+
   deploy:
     if: github.ref == 'refs/heads/main'
     needs: build

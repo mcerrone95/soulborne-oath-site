@@ -1,16 +1,8 @@
-import { useState } from 'react'
+// The form posts straight to Buttondown, which stores the address and sends a confirmation email.
+// The confirmation page opens in a new tab so visitors keep their place on the site.
+const FORM_ACTION = 'https://buttondown.com/api/emails/embed-subscribe/mcerrone95'
 
 export default function Signup() {
-  const [email, setEmail] = useState('')
-  const [message, setMessage] = useState('')
-
-  function handleSubmit(event) {
-    event.preventDefault()
-    // TODO: connect this to an email service (for example a Buttondown or Mailchimp form endpoint).
-    // Until then, tell the visitor honestly that signup is not live.
-    setMessage('Signup is not connected yet. Please check back soon.')
-  }
-
   return (
     <section id="signup" className="section section-signup">
       <div className="signup-box">
@@ -18,20 +10,19 @@ export default function Signup() {
         <p className="signup-copy">
           Launch news, sample chapters, and a note when the book is ready. Nothing else.
         </p>
-        <form className="signup-form" onSubmit={handleSubmit}>
+        <form className="signup-form" action={FORM_ACTION} method="post" target="_blank">
           <label htmlFor="email" className="visually-hidden">Email address</label>
           <input
             id="email"
             className="field"
             type="email"
+            name="email"
             required
             placeholder="you@example.com"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
           />
           <button className="btn btn-primary" type="submit">Join</button>
         </form>
-        <p className="signup-message" role="status">{message}</p>
+        <p className="signup-note">You will get a confirmation email. Click it to finish signing up.</p>
       </div>
     </section>
   )

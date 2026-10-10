@@ -32,11 +32,20 @@ Requires Node.js 20 or newer.
 To turn deployment on: in the GitHub repo, go to **Settings → Pages** and set **Source** to
 **GitHub Actions**. The site URL appears in the workflow run after the first deploy.
 
+## Run it in Docker
+
+```bash
+docker build -t soulborne-oath-site .
+docker run --rm -p 8080:80 soulborne-oath-site
+```
+
+Then open http://localhost:8080. The Dockerfile builds the site with Node, then copies only the
+finished files into a small nginx image. CI builds the image on every push to prove it works.
+
 ## To do before launch
 
 - [ ] Replace the world entries in `src/components/World.jsx`
 - [x] Pick the final excerpt (current one is mid-book)
-- [ ] Connect the signup form in `src/components/Signup.jsx` to an email service
 - [ ] Add a release date or retailer links when they exist
 
 ## Later
