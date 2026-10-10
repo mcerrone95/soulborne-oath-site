@@ -71,30 +71,34 @@ h1, h2, h3, p { margin-top: 0; }
 
 /* Hero */
 .hero {
-  position: relative; overflow: hidden; display: flex; flex-direction: column; align-items: center;
-  text-align: center; padding: 72px 24px 120px;
+  position: relative; overflow: hidden; padding: 72px 24px 120px;
   background: radial-gradient(ellipse at 50% 100%, #4a1d09 0%, #1e0f09 42%, #0d0a09 78%);
 }
-.hero > * { position: relative; }
 .hero > .ember { position: absolute; }
-.sigil {
-  width: min(360px, 70vw); height: auto; display: block;
-  filter: drop-shadow(0 0 28px rgba(232, 116, 31, 0.45));
+.hero-inner {
+  position: relative; max-width: 1120px; margin: 0 auto;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 48px 64px;
 }
+.hero-cover {
+  flex: 0 1 380px; width: min(380px, 80vw); height: auto; display: block;
+  border: 1px solid #5a4636;
+  box-shadow: 0 0 60px rgba(232, 116, 31, 0.35), 0 24px 48px rgba(0, 0, 0, 0.6);
+}
+.hero-text { flex: 1 1 380px; max-width: 560px; text-align: center; }
 .hero-kicker {
-  margin: 36px 0 0; font-weight: 600; font-size: 15px; letter-spacing: 0.32em;
+  margin: 0; font-weight: 600; font-size: 15px; letter-spacing: 0.32em;
   text-transform: uppercase; color: var(--soft);
 }
 .hero-title {
   margin: 8px 0 0; font-family: var(--display); font-weight: 700;
-  font-size: clamp(52px, 12vw, 148px); line-height: 1; letter-spacing: 0.08em;
+  font-size: clamp(40px, 8vw, 80px); line-height: 1; letter-spacing: 0.08em;
   color: var(--bone-bright); text-shadow: 0 0 40px rgba(232, 116, 31, 0.45);
 }
 .hero-subtitle {
   margin: 6px 0 0; font-family: var(--display); font-weight: 600;
-  font-size: clamp(24px, 4.4vw, 46px); letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);
+  font-size: clamp(20px, 3.2vw, 32px); letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent);
 }
-.hero-tagline { margin: 32px 0 0; max-width: 560px; font-size: 22px; font-style: italic; }
+.hero-tagline { margin: 32px auto 0; max-width: 560px; font-size: 22px; font-style: italic; }
 .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 40px; }
 .hero-status {
   margin: 28px 0 0; font-size: 15px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted);
@@ -173,6 +177,8 @@ h1, h2, h3, p { margin-top: 0; }
   margin: 0; padding: 32px 36px; border-left: 4px solid var(--accent);
   background: var(--ground); font-size: 21px; line-height: 1.8;
 }
+.excerpt p { margin: 0 0 1em; }
+.excerpt p:last-child { margin-bottom: 0; }
 
 /* Signup */
 .section-signup {

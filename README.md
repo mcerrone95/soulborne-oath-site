@@ -1,7 +1,7 @@
 # Soulborne: Oath of Vengeance — teaser site
 
 A one-page React site for *Soulborne: Oath of Vengeance*, Book One of a high fantasy trilogy.
-The art (sigil and drifting embers) is drawn in SVG and CSS, so the site needs no image files.
+The hero shows the book cover (`src/assets/cover.jpg`) over drifting CSS embers.
 
 ## Run it locally
 
@@ -35,8 +35,7 @@ To turn deployment on: in the GitHub repo, go to **Settings → Pages** and set 
 ## To do before launch
 
 - [ ] Replace the world entries in `src/components/World.jsx`
-- [ ] Paste the opening excerpt into `src/components/Chapter.jsx`
-- [ ] Replace `[Author name]` in `src/components/Footer.jsx`
+- [x] Pick the final excerpt (current one is mid-book)
 - [ ] Connect the signup form in `src/components/Signup.jsx` to an email service
 - [ ] Add a release date or retailer links when they exist
 
